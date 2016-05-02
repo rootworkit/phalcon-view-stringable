@@ -1,9 +1,9 @@
 {
-  "name": "rootwork/phalcon-view-string",
+  "name": "rootwork/phalcon-view-stringable",
   "description": "A Phalcon 2 View library for rendering string templates",
   "license": "BSD-3-Clause",
   "keywords": ["rootwork", "phalcon", "view", "render string"],
-  "homepage": "https://github.com/rootworkit/phalcon-view-string",
+  "homepage": "https://github.com/rootworkit/phalcon-view-stringable",
   "authors": [
     {
       "name": "Mike Soule",
