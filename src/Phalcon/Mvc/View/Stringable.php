@@ -17,15 +17,31 @@ class Stringable extends View
 {
 
     /**
-     * Render a string template.
+     * Render a string template and return the content.
      *
      * @param string        $template
      * @param array|null    $params
      *
-     * @return $this
+     * @return string The rendered template
      * @throws Exception
      */
     public function renderString($template, array $params = null)
+    {
+        $this->compileString($template, $params);
+
+        return $this->getRender($this->_pickView[0], $this->_pickView[1], $params);
+    }
+
+    /**
+     * Compile a string template and return the compiled template.
+     *
+     * @param string        $template
+     * @param array|null    $params
+     *
+     * @return string The path to the compiled string.
+     * @throws Exception
+     */
+    public function compileString($template, array $params = null)
     {
         if (!empty($params)) {
             $this->setVars($params);
@@ -45,7 +61,7 @@ class Stringable extends View
 
                 $this->pick([dirname($filename), basename($filename, $compileExt)]);
 
-                return $this;
+                return $filename;
             }
         }
 
@@ -79,8 +95,8 @@ class Stringable extends View
      */
     public function getStringCompileExtension()
     {
-        if (isset($this->_options['stringCompileExtension'])) {
-            return $this->_options['stringCompileExtension'];
+        if (isset($this->_options['stringCompileExt'])) {
+            return $this->_options['stringCompileExt'];
         }
 
         return '.phtml';
