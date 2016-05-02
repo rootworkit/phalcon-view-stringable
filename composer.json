@@ -1,0 +1,27 @@
+{
+  "name": "rootwork/phalcon-view-string",
+  "description": "A Phalcon 2 View library for rendering string templates",
+  "license": "BSD-3-Clause",
+  "keywords": ["rootwork", "phalcon", "view", "render string"],
+  "homepage": "https://github.com/rootworkit/phalcon-view-string",
+  "authors": [
+    {
+      "name": "Mike Soule",
+      "email": "mike@rootwork.it"
+    }
+  ],
+  "require": {
+    "php": ">=5.4",
+    "ext-phalcon": ">=2.0.4"
+  },
+  "require-dev": {
+    "phalcon/devtools": "dev-master",
+    "phpunit/phpunit": "5.1.*"
+  },
+  "autoload": {
+    "psr-4": { "Rootwork\\Phalcon\\": "src/Phalcon/" }
+  },
+  "autoload-dev": {
+    "psr-4": { "Rootwork\\Test\\": "tests/" }
+  }
+}
